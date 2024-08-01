@@ -9,58 +9,73 @@
             font-family: 'Sans-serif';
             margin: 0;
             padding: 0;
-            background-color: #e6f7ff;
+            background-color: #f0fff0;
+            color: #333;
         }
         header {
-            background-color: #ffcc99;
-            color: white;
-            padding: 10px 0;
+            background-color: #ffebcd;
+            color: #333;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #ff9966;
-            padding: 10px 0;
+            background-color: #ffdead;
+            padding: 15px 0;
         }
         nav a {
-            color: white;
+            color: #333;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
         }
         nav a:hover {
-            color: #ffcc00;
+            color: #ff7f50;
         }
         .section {
             padding: 20px;
             margin: 20px;
             border-radius: 10px;
+            background-color: #f0fff0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .home {
-            background-color: #b3ecff;
+            background-color: #e0ffff;
         }
         .about {
-            background-color: #ccffcc;
+            background-color: #f5fffa;
         }
         .projects {
-            background-color: #e6f7ff;
+            background-color: #e6e6fa;
         }
         .blogs {
-            background-color: #ccffcc;
+            background-color: #ffffe0;
         }
         .contact {
-            background-color: #e6f7ff;
+            background-color: #fafad2;
         }
         footer {
-            background-color: #ffcc99;
-            color: white;
+            background-color: #ffebcd;
+            color: #333;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+            .section {
+                margin: 10px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
