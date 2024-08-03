@@ -20,32 +20,36 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            position: relative;
         }
-        header h1 {
+        .header-left, .header-right {
+            flex: 1;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .header-left {
+            background-image: url('https://www.nokia.com/sites/default/files/styles/scale_720_not_convert_webp/public/2023-02/nokia-refreshed-logo-2_1.png');
+        }
+        .header-right {
+            background-image: url('https://www.iith.ac.in/assets/images/logo.png');
+        }
+        .header-center {
+            flex: 2;
+            text-align: center;
+        }
+        .header-center h1 {
             margin: 0 10px;
             font-size: 2.5em;
             animation: fadeInDown 2s ease-in-out;
-            flex: 1;
-            text-align: center;
         }
-        header p {
+        .header-center p {
             margin: 10px 0;
             animation: fadeInUp 2s ease-in-out;
-            flex: 1;
-            text-align: center;
-        }
-        header img {
-            height: 80px;
-            margin: 0 15px;
-            animation: fadeIn 2s ease-in-out;
-            background: rgba(255, 255, 255, 0.5);
-            padding: 10px;
-            border-radius: 10px;
         }
         nav {
             display: flex;
@@ -129,10 +133,6 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
         @media (max-width: 600px) {
             nav {
                 flex-direction: column;
@@ -144,9 +144,8 @@
                 margin: 10px;
                 padding: 15px;
             }
-            header img {
+            .header-left, .header-right {
                 height: 60px;
-                margin: 0 10px;
             }
         }
     </style>
@@ -154,12 +153,12 @@
 <body>
 
 <header>
-    <img src="https://www.nokia.com/sites/default/files/styles/scale_720_not_convert_webp/public/2023-02/nokia-refreshed-logo-2_1.png" alt="Nokia Logo">
-    <div>
+    <div class="header-left"></div>
+    <div class="header-center">
         <h1>Marisetti Akhil</h1>
         <p>M.Tech RA Student at IIT Hyderabad</p>
     </div>
-    <img src="https://www.iith.ac.in/assets/images/logo.png" alt="IIT Hyderabad Logo">
+    <div class="header-right"></div>
 </header>
 
 <nav>
