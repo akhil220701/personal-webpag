@@ -22,15 +22,22 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: center;
             position: relative;
             animation: slideInFromTop 1.5s ease-out forwards;
         }
-        .header-img {
-            height: 80px;
-            width: auto;
-            max-width: 100px;
-            animation: fadeIn 2s ease-in-out;
+        .header-left, .header-right {
+            flex: 1;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .header-left {
+            background-image: url('https://www.nokia.com/sites/default/files/styles/scale_720_not_convert_webp/public/2023-02/nokia-refreshed-logo-2_1.png');
+        }
+        .header-right {
+            background-image: url('https://www.iith.ac.in/assets/images/logo.png');
         }
         .header-center {
             flex: 2;
@@ -152,18 +159,18 @@
                 flex-direction: column;
                 height: auto;
             }
-            .header-img {
-                height: 60px;
-                max-width: 80px;
+            .header-left, .header-right {
+                height: 80px;
+                background-size: 100%;
             }
             .header-center h1 {
                 font-size: 2em;
             }
         }
         @media (max-width: 480px) {
-            .header-img {
-                height: 50px;
-                max-width: 70px;
+            .header-left, .header-right {
+                height: 60px;
+                background-size: 80%;
             }
             .header-center h1 {
                 font-size: 1.5em;
@@ -177,12 +184,12 @@
 <body>
 
 <header>
-    <img src="https://www.nokia.com/sites/default/files/styles/scale_720_not_convert_webp/public/2023-02/nokia-refreshed-logo-2_1.png" alt="Nokia Logo" class="header-img">
+    <div class="header-left"></div>
     <div class="header-center">
         <h1>Marisetti Akhil</h1>
         <p>M.Tech RA Student at IIT Hyderabad</p>
     </div>
-    <img src="https://www.iith.ac.in/assets/images/logo.png" alt="IIT Hyderabad Logo" class="header-img">
+    <div class="header-right"></div>
 </header>
 
 <nav>
