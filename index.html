@@ -24,6 +24,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            animation: slideInFromTop 1.5s ease-out forwards;
         }
         .header-left, .header-right {
             flex: 1;
@@ -60,16 +61,18 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            animation: slideInFromTop 1.5s ease-out forwards;
         }
         nav a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
         }
         nav a:hover {
             color: #ffcc00;
+            transform: translateY(-3px);
         }
         .section {
             padding: 20px;
@@ -78,6 +81,9 @@
             background-color: #f0fff0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-in-out forwards;
         }
         .section:hover {
             transform: translateY(-10px);
@@ -105,16 +111,18 @@
             padding: 15px 0;
             width: 100%;
             position: relative;
+            animation: fadeIn 1s ease-in-out forwards;
         }
         .icon {
             font-size: 2em;
             margin-right: 10px;
             vertical-align: middle;
             color: #555;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
         }
         .icon:hover {
             color: #32cd32;
+            transform: scale(1.1);
         }
         ul {
             list-style-type: none;
@@ -124,7 +132,11 @@
             padding: 5px 0;
             font-size: 1.1em;
             line-height: 1.5;
-            animation: fadeInUp 1s ease-in-out;
+            animation: fadeInUp 1s ease-in-out forwards;
+            transition: color 0.3s;
+        }
+        ul li:hover {
+            color: #555;
         }
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-20px); }
@@ -133,6 +145,14 @@
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInFromTop {
+            from { opacity: 0; transform: translateY(-100px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         @media (max-width: 768px) {
             header {
